@@ -15,23 +15,23 @@ type GseTokenizer struct {
 }
 
 func NewGseTokenizer(dictFiles string) *GseTokenizer {
-	// segmenter := gse.New("./data/dict/zh/dict.txt", dictFiles)
-	// segmenter.MoreLog = false
-	// segmenter.SkipLog = true
 	var segmenter gse.Segmenter
 	segmenter.SkipLog = true
-	segmenter.LoadDict(dictFiles)
+	//segmenter.LoadDict(dictFiles)
+	segmenter.LoadDictEmbed()
 	return &GseTokenizer{&segmenter}
 }
 
-/* func (t *GseTokenizer) Free()  {
-} */
-
 func (t *GseTokenizer) Tokenize(sentence []byte) analysis.TokenStream {
-	result := make(analysis.TokenStream, 0)
-	pos := 1
-	//segments := t.segmenter.ModeSegment(sentence, true)
 	segments := t.segmenter.Segment(sentence)
+	sz := len(segments)
+	if sz == 0 {
+		return analysis.TokenStream{}
+	}
+
+	pos := 1
+	result := make(analysis.TokenStream, 0, sz)
+
 	for _, seg := range segments {
 		token := analysis.Token{
 			Term:     []byte(seg.Token().Text()),
