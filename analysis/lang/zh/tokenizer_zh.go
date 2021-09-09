@@ -14,10 +14,9 @@ type GseTokenizer struct {
 	segmenter *gse.Segmenter
 }
 
-func NewGseTokenizer(dictFiles string) *GseTokenizer {
+func NewGseTokenizer() *GseTokenizer {
 	var segmenter gse.Segmenter
 	segmenter.SkipLog = true
-	//segmenter.LoadDict(dictFiles)
 	segmenter.LoadDictEmbed()
 	return &GseTokenizer{&segmenter}
 }
@@ -47,11 +46,7 @@ func (t *GseTokenizer) Tokenize(sentence []byte) analysis.TokenStream {
 }
 
 func tokenizerConstructor(config map[string]interface{}, cache *registry.Cache) (analysis.Tokenizer, error) {
-	dicts, ok := config["user_dicts"].(string)
-	if !ok || dicts == "" {
-		panic("Initialize Gse tokenizer error: user dicts should NOT be empty")
-	}
-	return NewGseTokenizer(dicts), nil
+	return NewGseTokenizer(), nil
 }
 
 func init() {

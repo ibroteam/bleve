@@ -28,3 +28,5 @@ require (
 	go.etcd.io/bbolt v1.3.5
 	golang.org/x/text v0.3.0
 )
+
+replace github.com/go-ego/gse v0.69.2 => github.com/ibroteam/gse v0.69.2
