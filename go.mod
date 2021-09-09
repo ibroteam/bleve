@@ -18,6 +18,7 @@ require (
 	github.com/blevesearch/zapx/v14 v14.2.3
 	github.com/blevesearch/zapx/v15 v15.2.3
 	github.com/couchbase/moss v0.1.0
+	github.com/go-ego/gse v0.69.2
 	github.com/golang/protobuf v1.3.2
 	github.com/kljensen/snowball v0.6.0
 	github.com/rcrowley/go-metrics v0.0.0-20190826022208-cac0b30c2563
