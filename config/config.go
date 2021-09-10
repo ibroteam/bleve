@@ -19,8 +19,9 @@ import (
 	_ "github.com/blevesearch/bleve/v2/analysis/tokenmap"
 
 	// fragment formatters
-	_ "github.com/blevesearch/bleve/v2/search/highlight/format/ansi"
-	_ "github.com/blevesearch/bleve/v2/search/highlight/format/html"
+	_ "github.com/blevesearch/bleve/v2/search/highlight/format/single"
+	//_ "github.com/blevesearch/bleve/v2/search/highlight/format/ansi"
+	//_ "github.com/blevesearch/bleve/v2/search/highlight/format/html"
 
 	// fragmenters
 	_ "github.com/blevesearch/bleve/v2/search/highlight/fragmenter/simple"
@@ -69,8 +70,8 @@ import (
 	_ "github.com/blevesearch/bleve/v2/analysis/tokenizer/whitespace"
 
 	// date time parsers
-	_ "github.com/blevesearch/bleve/v2/analysis/datetime/flexible"
-	_ "github.com/blevesearch/bleve/v2/analysis/datetime/optional"
+	//_ "github.com/blevesearch/bleve/v2/analysis/datetime/flexible"
+	//_ "github.com/blevesearch/bleve/v2/analysis/datetime/optional"
 
 	// languages
 	//_ "github.com/blevesearch/bleve/v2/analysis/lang/ar"
