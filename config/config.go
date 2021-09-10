@@ -30,6 +30,7 @@ import (
 	_ "github.com/blevesearch/bleve/v2/search/highlight/highlighter/ansi"
 	_ "github.com/blevesearch/bleve/v2/search/highlight/highlighter/html"
 	_ "github.com/blevesearch/bleve/v2/search/highlight/highlighter/simple"
+	_ "github.com/blevesearch/bleve/v2/search/highlight/highlighter/single"
 
 	// char filters
 	_ "github.com/blevesearch/bleve/v2/analysis/char/asciifolding"
