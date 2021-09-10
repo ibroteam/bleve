@@ -18,10 +18,10 @@ import (
 	// token maps
 	_ "github.com/blevesearch/bleve/v2/analysis/tokenmap"
 
+	_ "github.com/blevesearch/bleve/v2/search/highlight/format/ansi"
+	_ "github.com/blevesearch/bleve/v2/search/highlight/format/html"
 	// fragment formatters
 	_ "github.com/blevesearch/bleve/v2/search/highlight/format/single"
-	//_ "github.com/blevesearch/bleve/v2/search/highlight/format/ansi"
-	//_ "github.com/blevesearch/bleve/v2/search/highlight/format/html"
 
 	// fragmenters
 	_ "github.com/blevesearch/bleve/v2/search/highlight/fragmenter/simple"
