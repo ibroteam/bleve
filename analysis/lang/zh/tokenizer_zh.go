@@ -18,6 +18,7 @@ func NewGseTokenizer() *GseTokenizer {
 	var segmenter gse.Segmenter
 	segmenter.SkipLog = true
 	segmenter.LoadDictEmbed()
+	segmenter.LoadStopEmbed()
 	return &GseTokenizer{&segmenter}
 }
 

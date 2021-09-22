@@ -1,6 +1,6 @@
 module github.com/blevesearch/bleve/v2
 
-go 1.13
+go 1.16
 
 require (
 	github.com/RoaringBitmap/roaring v0.7.3
@@ -29,4 +29,4 @@ require (
 	golang.org/x/text v0.3.0
 )
 
-replace github.com/go-ego/gse v0.69.2 => github.com/ibroteam/gse v0.69.2
+replace github.com/go-ego/gse v0.69.2 => github.com/ibroteam/gse v0.69.7
