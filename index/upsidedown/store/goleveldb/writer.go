@@ -17,8 +17,8 @@ package goleveldb
 import (
 	"fmt"
 
+	"github.com/blevesearch/goleveldb/leveldb"
 	store "github.com/blevesearch/upsidedown_store_api"
-	"github.com/syndtr/goleveldb/leveldb"
 )
 
 type Writer struct {

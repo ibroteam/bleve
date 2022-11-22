@@ -34,7 +34,7 @@ import (
 	index "github.com/blevesearch/bleve_index_api"
 )
 
-var testAnalyzer = &analysis.Analyzer{
+var testAnalyzer = &analysis.DefaultAnalyzer{
 	Tokenizer: regexpTokenizer.NewRegexpTokenizer(regexp.MustCompile(`\w+`)),
 }
 
@@ -1239,7 +1239,7 @@ func TestIndexTermReaderCompositeFields(t *testing.T) {
 		}
 	}()
 
-	termFieldReader, err := indexReader.TermFieldReader([]byte("mister"), "_all", true, true, true)
+	termFieldReader, err := indexReader.TermFieldReader(nil, []byte("mister"), "_all", true, true, true)
 	if err != nil {
 		t.Error(err)
 	}

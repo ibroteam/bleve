@@ -60,7 +60,7 @@ func CreateConfig(name string) map[string]interface{} {
 	return rv
 }
 
-var testAnalyzer = &analysis.Analyzer{
+var testAnalyzer = &analysis.DefaultAnalyzer{
 	Tokenizer: regexpTokenizer.NewRegexpTokenizer(regexp.MustCompile(`\w+`)),
 }
 
@@ -1528,7 +1528,7 @@ func TestIndexTermReaderCompositeFields(t *testing.T) {
 		}
 	}()
 
-	termFieldReader, err := indexReader.TermFieldReader([]byte("mister"), "_all", true, true, true)
+	termFieldReader, err := indexReader.TermFieldReader(nil, []byte("mister"), "_all", true, true, true)
 	if err != nil {
 		t.Error(err)
 	}
@@ -2480,7 +2480,7 @@ func TestIndexSeekBackwardsStats(t *testing.T) {
 	}
 	defer reader.Close()
 
-	tfr, err := reader.TermFieldReader([]byte("cat"), "name", false, false, false)
+	tfr, err := reader.TermFieldReader(nil, []byte("cat"), "name", false, false, false)
 	if err != nil {
 		t.Fatalf("error getting term field readyer for name/cat: %v", err)
 	}
