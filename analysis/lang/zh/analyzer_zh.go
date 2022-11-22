@@ -6,7 +6,7 @@ import (
 	"github.com/blevesearch/bleve/v2/registry"
 )
 
-func NewAnalyzer(config map[string]interface{}, cache *registry.Cache) (*analysis.Analyzer, error) {
+func NewAnalyzer(config map[string]interface{}, cache *registry.Cache) (analysis.Analyzer, error) {
 	tokenizerName, ok := config["tokenizer"].(string)
 	if !ok {
 		return nil, errors.New("must specify tokenizer")
@@ -15,7 +15,7 @@ func NewAnalyzer(config map[string]interface{}, cache *registry.Cache) (*analysi
 	if err != nil {
 		return nil, err
 	}
-	alz := &analysis.Analyzer{Tokenizer: tokenizer}
+	alz := &analysis.DefaultAnalyzer{Tokenizer: tokenizer}
 	return alz, nil
 }
 func init() {
